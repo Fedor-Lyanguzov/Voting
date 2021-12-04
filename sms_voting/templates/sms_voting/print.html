@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <style>
+      body {
+        line-height: 2;
+      }
+      h2 {
+        text-align: center;
+        font-size: 100%;
+      }
+      .w3cm {
+        display: inline-block;
+        width: 3cm
+      }
+      .right {
+        display: inline;
+        float: right;
+      }
+      hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 3px solid #ccc;
+        margin: 1em 0;
+        padding: 0;
+      }
+      {% block style %}
+      {% endblock %}
+    </style>
+  </head>
+  <body>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

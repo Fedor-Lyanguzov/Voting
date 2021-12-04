@@ -1,0 +1,18 @@
+<form action="." method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="save" value="Save">
+    <input type="submit" name="send_instructions" value="Send instructions">
+    {% if object.is_planned %}
+    <input type="submit" name="start_poll" value="Start poll">
+    {% endif %}
+    {% if object.is_started %}
+    <input type="submit" name="end_poll" value="End poll">
+    <input type="submit" name="resend_memos" value="Resend memos to remote participants">
+    <input type="submit" name="download_memos" value="Download memos for face participants">
+    {% endif %}
+    {% if object.is_ended %}
+    <input type="submit" name="show_results" value="Show results">
+    {% endif %}
+    <input type="submit" name="restart" value="Restart poll">
+</form>

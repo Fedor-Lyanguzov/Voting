@@ -1,0 +1,19 @@
+{% extends "sms_voting/print.html" %}
+
+{% block style %}
+body {
+  line-height: 1.15;
+  }
+.no-break {
+page-break-inside: avoid;
+}
+{% endblock %}
+
+{% block content %}
+  {% for b in bulletins %}
+  <div class="no-break">
+  {% include "sms_voting/memo.html" with yes_word=b.yes_word no_word=b.no_word voting_number=voting_number %}
+  </div>
+  <hr>
+  {% endfor %}
+{% endblock %}
